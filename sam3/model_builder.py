@@ -7,6 +7,7 @@ import torch
 import torch.nn as nn
 from huggingface_hub import hf_hub_download
 from iopath.common.file_io import g_pathmgr
+
 from sam3.model.decoder import (
     TransformerDecoder,
     TransformerDecoderLayer,
@@ -23,10 +24,12 @@ from sam3.model.memory import (
     SimpleMaskEncoder,
 )
 from sam3.model.model_misc import (
-    DotProductScoring,
     MLP,
-    MultiheadAttentionWrapper as MultiheadAttention,
+    DotProductScoring,
     TransformerWrapper,
+)
+from sam3.model.model_misc import (
+    MultiheadAttentionWrapper as MultiheadAttention,
 )
 from sam3.model.necks import Sam3DualViTDetNeck
 from sam3.model.position_encoding import PositionEmbeddingSine
